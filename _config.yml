@@ -1,3 +1,43 @@
-theme: jekyll-theme-architect
-title: Learning Notes
-description: Learn!
+# Site settings
+title: Elvyna Tunggawan
+description: 'Data scientist in the making'
+url: 'http://elvyna.github.io'
+# baseurl: '/'
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
+
+author:
+  name: 'Elvyna Tunggawan'
+  email: elvyna.tunggawan@gmail.com
+  twitter_username: vexenta
+  facebook_username: elvyna.tunggawan
+  github_username:  elvyna
+  linkedin_username:  elvyna
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+plugins: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png','ruby-dev']
