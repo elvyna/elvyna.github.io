@@ -4,7 +4,7 @@ description: 'Data scientist in the making'
 url: 'https://elvyna.github.io'
 # baseurl: 'https://elvyna.github.io'
 google_analytics: 'UA-61022055-2'
-# disqus_shortname: 'your-disqus-name'
+disqus_shortname: 'vexenta'
 
 author:
   name: 'Elvyna Tunggawan'
