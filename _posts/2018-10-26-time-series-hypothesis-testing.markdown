@@ -1,6 +1,6 @@
 ---
-title:  "Time series analysis: was it a good decision?"
-date:   2018-09-14 23:10:23
+title:  "Time series analysis: validating effect of changes"
+date:   2018-10-26 22:10:23
 categories: [hypothesis-test, statistics, time-series]
 tags: [python, statistics, time-series]
 ---
@@ -46,18 +46,38 @@ We use two sample t-test; we want to know whether average of each group (period)
 
 First, we calculate **mean** of observation on each group, then subtract them to get the **mean difference** (the "signal"). Then, we calculate the variance of each group, and calculate **pooled standard deviation**: weighted average of variation within each groups (the "noise"). The "signal" is divided by "noise" to obtain the **t-value**; higher t-value means it is more likely to observe statistical significance (lower p-value). The formula isn't elaborated here, but you can refer to the first and second link on Reference section.
 
-From both tests, we **fail to reject the null hypotheses** with p-value: 1) test 1: 0.448, and 2) test 2: 0.611; thus we could infer that there is no significant effect of the campaign.
+From both tests, we **fail to reject the null hypotheses** with p-value on test 1 =  0.448 and test 2 = 0.611; thus we could infer that there is no significant effect of the campaign.
 
 **2. Causal Impact Analysis**
 
-While t-test could be used on time series data, we might get overoptimistic inferences since the residuals might still have autocorrelation each other, thus violates independence assumption. Alas, it is more suitable to use causal impact analysis. On this approach, the original time series and another control time series are used to construct the model. [CausalImpact package](https://google.github.io/CausalImpact/CausalImpact.html) is really helpful to do this.
+While **t-test** could be used on time series data, we **might get overoptimistic inferences** since the residuals might still have **autocorrelation** each other, thus violates independence assumption. Alas, it is more suitable to use causal impact analysis. On this approach, the original time series and another control time series are used to construct a model. The model will predict observation of the "alternate universe"; we can measure the impact of the actual decision by subtracting actual observation with the prediction. [CausalImpact package](https://google.github.io/CausalImpact/CausalImpact.html) is a really helpful package, by the way.
 
+Again, we conduct two tests, to check significance of first and second campaign. We use Tokopedia's search query as additional model components, especially since it has similar trend and seasonality with Bukalapak's, so we can assume it as control group.
 
+There are three plots on CausalImpact's output: 
+1. original: shows actual observation (solid line) and the prediction (dashed line)
+2. pointwise: shows difference between predicted and actual value per data point
+3. cumulative: shows cumulative difference between predicted and actual value
 
-Since result of two sample t-test and causal impact differs, we use Bayesian change point to check which result is more likely to be correct.
+The first campaign shows increasing search query compared to the prediction (when no campaign is released), and the impact is statistically significant with p-value = 0.001. Meanwhile, second campaign doesn't seem to have any effect on the search query (p-value = 0.254). Detailed result can be seen [here](http://nbviewer.jupyter.org/github/elvyna/data-analysis/blob/master/jupyter-notebook/2018-09-16%20Bukalapak%20Nego%20Cincai%20-%20Time%20series%20hypothesis%20test%20-%20R.ipynb).
 
-How Bayesian change point works: ...
+![causal-impact-1](/images/posts/2018-10-26-time-series-hypothesis-testing/causal-impact-test-1.png)
+<center>Figure 4. Causal impact analysis of the first campaign - significant </center><br>
 
+![causal-impact-2](/images/posts/2018-10-26-time-series-hypothesis-testing/causal-impact-test-2.png)
+<center>Figure 5. Causal impact analysis of the second campaign - not significant</center><br>
+
+Since result of two sample t-test and causal impact differs, we use Bayesian change point as final check.  
+
+**Extra: Bayesian change point**
+
+Based on the data (for test 1 and test 2), we try to estimate on which point of time the data changes. It appears that the change point occurs on January and July 2018 (when the first and second campaign started). Detected change point on January 2018 supports causal impact analysis's results; while although we observe change point on July 2018, causal impact analysis shows that the difference isn't statistically significant. Thus, we can infer that the first campaign significantly increases Bukalapak's search query; while the second campaign doesn't.
+
+![bcp-1](/images/posts/2018-10-26-time-series-hypothesis-testing/bcp-test-1.png)
+<center>Figure 6. Change point analysis on first campaign: January 2018</center><br>
+
+![bcp-2](/images/posts/2018-10-26-time-series-hypothesis-testing/bcp-test-2.png)
+<center>Figure 7. Change point analysis on second campaign: July 2018</center><br>
 
 ***
 
@@ -70,6 +90,10 @@ Aside from approaches mentioned above, [convergent cross mapping](https://media.
 [2] [iSix Sigma - Making sense of two sample t-test](https://www.isixsigma.com/tools-templates/hypothesis-testing/making-sense-two-sample-t-test/)
 
 [3] [Brodersen, K., et. al. 2015. *Inferring causal impact using Bayesian structural time-series models*. Annals of Applied Statistics, vol. 9, pp. 247-274](https://ai.google/research/pubs/pub41854)
+
+[4] [Bayesian Changepoint Detection with PyMC3](https://cscherrer.github.io/post/bayesian-changepoint/)
+
+[5] [A Simple Intro to Bayesian Change Point Analysis](https://www.r-bloggers.com/a-simple-intro-to-bayesian-change-point-analysis/)
 
 [jekyll]:      http://jekyllrb.com
 [Bukalapak]:    http://bukalapak.com
