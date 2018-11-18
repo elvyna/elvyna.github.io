@@ -52,7 +52,7 @@ From both tests, we **fail to reject the null hypotheses** with p-value on test 
 
 While **t-test** could be used on time series data, we **might get overoptimistic inferences** since the residuals might still have **autocorrelation** each other, thus violates independence assumption. Alas, it is more suitable to use causal impact analysis. On this approach, the original time series and another control time series are used to construct a model. The model will predict observation of the "alternate universe"; we can measure the impact of the actual decision by subtracting actual observation with the prediction. [CausalImpact package](https://google.github.io/CausalImpact/CausalImpact.html) is a really helpful package, by the way.
 
-Again, we conduct two tests, to check significance of first and second campaign. We use Tokopedia's search query as additional model components, especially since it has similar trend and seasonality with Bukalapak's, so we can assume it as control group.
+Again, we conduct two tests, to check significance of first and second campaign. We use Tokopedia's search query as additional model components, especially since it has similar trend and seasonality with Bukalapak's (Figure 2), so we can use it as control group.
 
 There are three plots on CausalImpact's output: 
 1. original: shows actual observation (solid line) and the prediction (dashed line)
@@ -79,9 +79,11 @@ Based on the data (for test 1 and test 2), we try to estimate on which point of 
 ![bcp-2](/images/posts/2018-10-26-time-series-hypothesis-testing/bcp-test-2.png)
 <center>Figure 7. Change point analysis on second campaign: July 2018</center><br>
 
-***
+## Conclusion
 
-Aside from approaches mentioned above, [convergent cross mapping](https://media.readthedocs.org/pdf/skccm/latest/skccm.pdf) can also be used to detect causality between time series. I haven't explored it, though.
+As long as we have data, it is not impossible to evaluate effect of our decision. I recommend using causal impact analysis rather than t-test since t-test might give us overoptimistic approach. Bayesian change point analysis can also help on finding the point(s) where the observation started to change. 
+
+Aside from these approaches, [convergent cross mapping](https://media.readthedocs.org/pdf/skccm/latest/skccm.pdf) can also be used to detect causality between time series - I haven't explored it, though.
 
 ## Reference
 
