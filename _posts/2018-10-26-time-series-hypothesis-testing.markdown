@@ -81,7 +81,7 @@ Based on the data (for test 1 and test 2), we try to estimate on which point of 
 
 ## Conclusion
 
-As long as we have data, it is not impossible to evaluate effect of our decision. I recommend using causal impact analysis rather than t-test since t-test might give us overoptimistic approach. Bayesian change point analysis can also help on finding the point(s) where the observation started to change. 
+As long as we have data, it is not impossible to evaluate effect of our decision. I recommend using causal impact analysis rather than t-test, since t-test might give us overoptimistic approach. Bayesian change point analysis can also help on finding the point(s) where the observation started to change. 
 
 Aside from these approaches, [convergent cross mapping](https://media.readthedocs.org/pdf/skccm/latest/skccm.pdf) can also be used to detect causality between time series - I haven't explored it, though.
 
