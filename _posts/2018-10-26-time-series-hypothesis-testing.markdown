@@ -97,5 +97,4 @@ Aside from these approaches, [convergent cross mapping](https://media.readthedoc
 
 [5] [A Simple Intro to Bayesian Change Point Analysis](https://www.r-bloggers.com/a-simple-intro-to-bayesian-change-point-analysis/)
 
-[jekyll]:      http://jekyllrb.com
 [Bukalapak]:    http://bukalapak.com
