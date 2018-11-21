@@ -1,8 +1,8 @@
 ---
 title:  "Time series analysis: validating effect of changes"
 date:   2018-10-26 22:10:23
-categories: [hypothesis-test, statistics, time-series]
-tags: [python, statistics, time-series]
+categories: [hypothesis-test, statistics, time-series, causal-impact]
+tags: [causal-impact, statistics, time-series]
 ---
 
 Have you ever wondered how much money you would spend if you didn't start smoking last year? Have you imagined how relieved you would be if you managed to say sorry after being rude to your parents? Sometimes we want to know the effect of our decision, but unfortunately we can't observe the alternate universe - condition when we don't take such decision. Thus, how could we know whether we took the right decision or not? 
