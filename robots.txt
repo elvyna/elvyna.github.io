@@ -1,3 +1,3 @@
-user-agent: *
-allow: /
-disallow: /feed*
+User-agent: *
+Allow: /
+Disallow: /feed*
