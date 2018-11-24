@@ -79,13 +79,13 @@ Based on the data (for test 1 and test 2), we try to estimate on which point of 
 ![bcp-2](/images/posts/2018-10-26-time-series-hypothesis-testing/bcp-test-2.png)
 <center>Figure 7. Change point analysis on second campaign: July 2018</center><br>
 
-## Conclusion
+## Conclusions
 
 As long as we have data, it is not impossible to evaluate effect of our decision. I recommend using causal impact analysis rather than t-test, since t-test might give us overoptimistic approach. Bayesian change point analysis can also help on finding the point(s) where the observation started to change. 
 
 Aside from these approaches, [convergent cross mapping](https://media.readthedocs.org/pdf/skccm/latest/skccm.pdf) can also be used to detect causality between time series - I haven't explored it, though.
 
-## Reference
+## References
 
 [1] [Minitab Blog - What Is a t-test? And Why Is It Like Telling a Kid to Clean Up that Mess in the Kitchen?](http://blog.minitab.com/blog/statistics-and-quality-data-analysis/what-is-a-t-test-and-why-is-it-like-telling-a-kid-to-clean-up-that-mess-in-the-kitchen)
 
