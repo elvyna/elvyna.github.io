@@ -1,6 +1,6 @@
 ---
 title: "k-nearest neighbours explained"
-date: 2019-01-28 08:40:00
+date: 2019-01-27 08:40:00
 categories: [classification, regression, machine-learning]
 tags: [python, knn, machine-learning, supervised-learning]
 ---
