@@ -5,7 +5,7 @@ url: 'https://elvyna.github.io'
 # baseurl: 'https://elvyna.github.io'
 google_analytics: 'UA-61022055-2'
 disqus_shortname: 'elvyna-github-io'
-future: true
+future: false
 
 author:
   name: 'Elvyna Tunggawan'
