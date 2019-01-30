@@ -11,7 +11,7 @@ Still related to my [previous post](https://elvyna.github.io/2019/knn-explained/
 
 On supervised learning (e.g. knn, decision tree), we already know what we are going to predict (target class $y$), such as whether tomorrow will be raining or not. On the contrary, just like its name, unsupervised learning algorithms attempt to find pattern from the data - without knowing the labels (target class $y$). One of unsupervised algorithms is clustering. It can be used for various things:
 - searching for subpopulations on the data
-- finding similariry of each subpopulations
+- finding similarity of each subpopulations
 - detecting outliers
 
 ### Types of clustering

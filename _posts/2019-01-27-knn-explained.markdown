@@ -155,8 +155,8 @@ There are several approaches to reduce the $n$.
 
 k-d trees can be used on low dimensional data with real-value. By using this, we could reduce the complexity to $O({d}*{ log}_2 n)$. Note that it could work only when $d<<n$; and it could miss nearest neighbours which aren't on the region.
 
-k-d trees work by building decision tree from training data:
-we pick a random dimension, find the median, then split the data into two regions. We repeat this step 
+k-d trees work by building binary trees from training data:
+we pick a random dimension, find the median, then split the data into two regions. We repeat this step until certain depth.
 
 ![k-d-trees](/images/posts/2019-01-28-knn-explained/8-k-dtree.png)
 <center>Figure 8. k-d trees limit the nearest neighbours search to certain region (Source: [2])</center><br>
