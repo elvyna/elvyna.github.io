@@ -5,13 +5,13 @@ categories: [communication]
 tags: [writing, structure, communication]
 ---
 
-No matter what your role is, communication plays an important part in your daily activities. Working in data science field, communication skill is an essential skill which is often overlooked. We might be too busy learning math, statistics and other stuff, and forget that we must be able to explain results of our findings to the stakeholders.
+No matter what your role is, communication plays an important part in your daily activities. Working in data science field, communication is an essential skill which is often overlooked. We might be too busy learning math, statistics and other stuff, and forget that we must be able to explain results of our findings to the stakeholders.
 
 Writing this post doesn't mean I am already perfect in my writings. In the beginning of my tenure, I tried to write reports as complete as possible. While *complete* sounds good, we shouldn't spoil too much information about unnecessary stuff. It sounds obvious, but how do we decide whether something is necessary to tell or not? This post covers some writing tips which are mostly covered in [1] and [3]. Although this post focuses on written communication, most tips are also applicable in other communication forms.
 
 ## Determine your target audience
 
-Before you start writing, determine who your **target** audience is. It doesn't mean you imagine what kind of person would read your writing, but what kind of person you hope would read it. There is nothing wrong if you go with the first approach, though. The difference is who takes the lead: you or your audience. In the first approach, your writing will be structured based on how your audience grasp the idea. On the other hand, if you take the second one, you will structure your writing based on your own plot. By the word plot, I mean you are in charge of fulfilling the message of your writing. The two approaches might sound similar, but they aren't. Imagine that you are an author of a book. Would you prefer to write stories that people like or write stories based on your own idea?
+Before you start writing, determine who your **target** audience is. It means you decide what kind of person you hope would read it, instead of imagining what kind of person would read your writing. There is nothing wrong if you go with the latter approach, though. The difference is who takes the lead: you or your audience. In the first approach, you will structure your writing based on your own plot. By the word plot,I mean you are in charge of fulfilling the message of your writing. On the other hand, if you take the second one, your writing will be structured based on how your audience grasp the idea. The two approaches might sound similar, but they aren't. Imagine that you are an author of a book. Would you prefer to write stories that people like or write stories based on your own idea?
 
 ![fig-1-match-words-audience](http://imgs.xkcd.com/comics/fairy_tales.png)
 <center>Figure 1. Match your words with your audience (source: <a href="http://xkcdsucks.blogspot.com/2011/03/comic-872-grimms-calculus.html)">xkcd</a>)</center><br />
@@ -37,7 +37,6 @@ If you have to tell an idea to people you don't know, it is better to use concre
 **4. Credible**
 
 Honesty and trustworthiness of the sources make a message credible, e.g. we trust our friends testimonials about a product, compared to the TV commercials. Statistics are also useful, although people tend to focus on the numbers instead of the relationships it illustrates.
-
 
 **5. Emotional**
 
