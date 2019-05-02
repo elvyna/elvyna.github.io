@@ -5,7 +5,7 @@ categories: [communication]
 tags: [writing, structure, communication]
 ---
 
-No matter what your role is, communication plays an important part in your daily activities. Working in data science field, communication is an essential skill which is often overlooked. We might be too busy learning math, statistics and other stuff, and forget that we must be able to explain results of our findings to the stakeholders.
+No matter what your role is, communication plays an important part in your daily activities. As a data scientist, I realize that communication is an essential skill which is often overlooked. We might be too busy learning math, statistics and other stuff, and forget that we must be able to explain results of our findings to the stakeholders.
 
 Writing this post doesn't mean I am already perfect in my writings. In the beginning of my tenure, I tried to write reports as complete as possible. While *complete* sounds good, we shouldn't spoil too much information about unnecessary stuff. It sounds obvious, but how do we decide whether something is necessary to tell or not? This post covers some writing tips which are mostly covered in [1] and [3]. Although this post focuses on written communication, most tips are also applicable in other communication forms.
 
@@ -26,7 +26,7 @@ Find the core of your idea, then strip it to its most critical essence. Imagine 
 
 **2. Unexpected**
 
-The first problem in communication is getting people's attention. To do so, you should break the pattern: figure out the counterintuitive part of your message, then create the gap: give a sequence of clues until the core message is delivered. It is better to use sequential approach instead of dumping a stack of information in the beginning of your writing.
+The first problem in communication is getting people's attention. To do so, you should break the pattern: figure out the counterintuitive part of your message, then create the gap. Give a sequence of clues until the core message is delivered. It is better to use sequential approach instead of dumping a stack of information in the beginning of your writing.
 
 **3. Concrete**
 
@@ -55,7 +55,7 @@ A key to make a sticky idea is delivering it as a story. Stories encourage a kin
 *Note that we don't always need to apply all six principles to make a memorable message.*
 
 ## Use Pyramid structure
-Pyramid principle introduces the importance of structured thinking and communication. It was first introduced at McKinsey by Barbara Minto, and now is widely used all over the world. By using Pyramid structure, we help readers to comprehend our way of thinking. There are two approaches to build the structure:
+Pyramid principle was first introduced at McKinsey by Barbara Minto, and now is widely used all over the world. It emphasizes the importance of structured thinking and communication. By using Pyramid structure, we help readers to comprehend our way of thinking. There are two approaches to build the structure:
 
 **1. Top-down approach**
 
