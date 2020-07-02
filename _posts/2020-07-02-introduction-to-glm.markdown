@@ -21,7 +21,7 @@ To come up with the regression line, we seek a line that minimizes the error of 
 
 We can measure the performance of this model by calculating the prediction error $$e$$:
 
-$$ e = \hat{y} - y$$
+$$ e_{i} = y_{i} - \hat{y}_{i}$$
 
 To know whether it is good or not, we compare the sum of squared prediction error ($$SS_{residual}$$) to the sum of squared error if we merely predict the values based on the mean ($$SS_{total}$$). Note that error is also called as residual.
 
