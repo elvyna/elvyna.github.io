@@ -1,5 +1,5 @@
 ---
-title: "Introduction to generalized linear model"
+title: "When a straight line goes wrong"
 date: 2020-07-02 02:30:00
 categories: [regression]
 tags: [statistics, regression, glm]
