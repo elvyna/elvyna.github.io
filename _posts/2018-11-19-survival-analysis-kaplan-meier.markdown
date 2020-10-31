@@ -20,17 +20,17 @@ On weekdays, I commute to Jakarta using either train or TransJakarta. Since thos
 
 Just like its name, survival analysis is analyzing the state or fact of continuing to live or exist, typically in spite of an accident, ordeal, or difficult circumstances. In this case, the difficult situation is getting in the bus. Let's say we have a dataset of bus waiting time and the observed outcome: get in a bus or unknown. Yes, it can be unknown, since we might not know the final outcome yet at the time of data collection. For example, I haven't got in the bus after waiting for 18 minutes, and we don't know whether I continue waiting until I get in the bus or decide to use other means of transportation. We call this **censorship**.
 
-![dataset-preview](/images/posts/2018-11-19-survival-analysis-kaplan-meier/dataset-preview.png)
+![dataset-preview](/images/posts/2018-11-19-survival-analysis-kaplan-meier/dataset-preview.png?style=centerme)
 <center>Figure 1. Dataset Preview </center><br>
 
 We aggregate the dataset based on the waiting time, and calculate how many times I get in the bus (**observed** - or *death*), and how many times the final outcome is unknown. Then, we calculate the survival function `S(t) = Pr(T>t)`; which describes probability of surviving past through time *t*. Since the observed event on our case is "getting in the bus", then the survival function calculates probability of not getting in the bus at time *t*. It can be calculated using [Kaplan-Meier estimator](https://lifelines.readthedocs.io/en/latest/Survival%20analysis%20with%20lifelines.html#estimating-the-survival-function-using-kaplan-meier). Simply put, we calculate product of survival probability up to time *t* (see `KM_estimate` on Figure 2).
 
-![survival-table](/images/posts/2018-11-19-survival-analysis-kaplan-meier/survival-table.png)
+![survival-table](/images/posts/2018-11-19-survival-analysis-kaplan-meier/survival-table.png?style=centerme)
 <center>Figure 2. Survival table </center><br>
 
 To make it more intuitive, we plot `1-KM_estimate`: probability of getting in the bus (see Figure 3). Based on the calculation, I am more likely to get in the bus **after waiting for 34 minutes**. Wow, it surely is crowded at the city, eh? Given this result, we could suggest to add more buses, so that passengers don't have to wait for such a long time.
 
-![plot-1-km-estimate](/images/posts/2018-11-19-survival-analysis-kaplan-meier/plot-1-km-estimate.png)
+![plot-1-km-estimate](/images/posts/2018-11-19-survival-analysis-kaplan-meier/plot-1-km-estimate.png?style=centerme)
 <center>Figure 3. Probability of getting in the bus</center><br>
 
 

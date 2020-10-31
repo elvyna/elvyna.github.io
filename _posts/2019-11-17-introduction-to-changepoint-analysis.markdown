@@ -13,7 +13,7 @@ No matter you've read this book or not, have you ever wondered whether your dail
 
 Welcome to change point analysis. As obvious as its name, it is a technique to identify **whether there is any change** in your data; and to find **when** the change occurs. Although it sounds simple, we tend to use our gut feeling and are prone to our subjective bias.
 
-![preview-data](/images/posts/2019-11-17-introduction-to-changepoint-analysis/1-preview-daily-spending.png)
+![preview-data](/images/posts/2019-11-17-introduction-to-changepoint-analysis/1-preview-daily-spending.png?style=centerme)
 <center>Figure 1. There's obvious increase, but how do we teach a computer to find it?</center><br/>
 
 ## Techniques
@@ -28,10 +28,10 @@ Let's say that we analyze the data periodically in batches. Since we calculate t
 
 On Figure 2, we find unusual spike close to August 2016. However, as we obtain more data points, our control limit definition changes, and we no longer assume that the August 2016's point as unusual (Figure 3). Well, my average spending is probably increased on that point since I've already worked on full time job, right?
 
-![control-chart-1](/images/posts/2019-11-17-introduction-to-changepoint-analysis/2-control-charts-1.png)
+![control-chart-1](/images/posts/2019-11-17-introduction-to-changepoint-analysis/2-control-charts-1.png?style=centerme)
 <center>Figure 2. Woah, there's a spike!</center><br/>
 
-![control-chart-2](/images/posts/2019-11-17-introduction-to-changepoint-analysis/3-control-charts-2.png)
+![control-chart-2](/images/posts/2019-11-17-introduction-to-changepoint-analysis/3-control-charts-2.png?style=centerme)
 <center>Figure 3. Previous spike (Figure 2) seems pretty normal now, eh?</center><br/>
 
 While control charts focus on point-wise change, you might be more interested in identifying the **change of the mean**. This is the time to use change point analysis! On this post, I'll cover the simplest methods to do **single change point analysis**.
@@ -45,10 +45,10 @@ CUSUM approach is quite simple:
 4. Calculate the **cumulative sum of the residuals** ($S_{i} = S_{i-1} + \epsilon_{i}$)
 5. **Plot** the cumulative sum at each time
 
-![plot-mean](/images/posts/2019-11-17-introduction-to-changepoint-analysis/4-plot-mean.png)
+![plot-mean](/images/posts/2019-11-17-introduction-to-changepoint-analysis/4-plot-mean.png?style=centerme)
 <center>Figure 4. Let's plot the mean to make it more intuitive</center><br/>
 
-![cusum-plot](/images/posts/2019-11-17-introduction-to-changepoint-analysis/5-cusum-plot.png)
+![cusum-plot](/images/posts/2019-11-17-introduction-to-changepoint-analysis/5-cusum-plot.png?style=centerme)
 <center>Figure 5. Sample CUSUM plot. Observe the shape!</center><br/>
 
 The CUSUM plot could show **upward or downward trend**. The upward trend describes that the period has higher value than the overall mean, while the downward trend shows that the period has lower value. When the trend turns into the opposite direction, it resembles the time when the change occurs.
@@ -83,10 +83,10 @@ $$MSE = \Sigma_{1}^{m}(x_{i} - \bar{X}_1)^2 + \Sigma_{m+1}^{n}(x_{i} - \bar{X}_2
 
 As we iterate the segmentation, we look for segment with the lowest mean squared error. For example, when we split the data on the 210th day (around August 2016), we still find large mean squared error on the second segment (Figure 6). Iterating the segmentation multiple times, we find the best split occurs around December 2016 (Figure 7). The result is consistent with what we observe using CUSUM approach.
 
-![sample-mse-estimator](/images/posts/2019-11-17-introduction-to-changepoint-analysis/6-mse-estimator-sample.png)
+![sample-mse-estimator](/images/posts/2019-11-17-introduction-to-changepoint-analysis/6-mse-estimator-sample.png?style=centerme)
 <center>Figure 6. Not the best split</center><br/>
 
-![best-mse-estimator](/images/posts/2019-11-17-introduction-to-changepoint-analysis/7-mse-estimator-best.png)
+![best-mse-estimator](/images/posts/2019-11-17-introduction-to-changepoint-analysis/7-mse-estimator-best.png?style=centerme)
 <center>Figure 7. The mean changes in the end of December 2016</center><br/>
 
 

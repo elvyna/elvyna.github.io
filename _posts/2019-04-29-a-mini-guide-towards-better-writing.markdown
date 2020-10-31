@@ -13,7 +13,7 @@ Writing this post doesn't mean I am already perfect in my writings. In the begin
 
 Before you start writing, determine who your **target** audience is. It means you decide what kind of person you hope would read it, instead of imagining what kind of person would read your writing. There is nothing wrong if you go with the latter approach, though. The difference is who takes the lead: you or your audience. In the first approach, you will structure your writing based on your own plot. By the word plot,I mean you are in charge of fulfilling the message of your writing. On the other hand, if you take the second one, your writing will be structured based on how your audience grasp the idea. The two approaches might sound similar, but they aren't. Imagine that you are an author of a book. Would you prefer to write stories that people like or write stories based on your own idea?
 
-![fig-1-match-words-audience](http://imgs.xkcd.com/comics/fairy_tales.png)
+![fig-1-match-words-audience](http://imgs.xkcd.com/comics/fairy_tales.png?style=centerme)
 <center>Figure 1. Match your words with your audience (source: <a href="http://xkcdsucks.blogspot.com/2011/03/comic-872-grimms-calculus.html)">xkcd</a>)</center><br />
 
 ## Create a memorable message
@@ -73,7 +73,7 @@ It is easier to start at the top, then work down to the details. The steps are:
 
 **f. Recheck the question and answer**: recheck question raised on (e). If it is different to the one you defined on (a), you might need to change it. Also make sure you don't pick a wrong complication on (e).
 
-![fig-2-top-down-pyramid](http://handbookofawesome.com/wp-content/uploads/2012/01/Pyramid1-v1.png)
+![fig-2-top-down-pyramid](http://handbookofawesome.com/wp-content/uploads/2012/01/Pyramid1-v1.png?style=centerme)
 <center>Figure 2. Top-down approach (source: <a href="http://handbookofawesome.com/2012/01/presenting-like-a-pro/)">Handbook of Awesome</a>)</center><br />
 
 The purpose of this approach is to make sure you know what question you are trying to answer. Once you have it, you should be able to continue the writing relatively easily.

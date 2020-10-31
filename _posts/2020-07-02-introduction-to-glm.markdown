@@ -9,12 +9,12 @@ tags: [statistics, regression, glm]
 
 You might be familiar with this kind of question in your math class. You have a list of students with their study duration and exam score, and you're asked to estimate John's score. In the example below, we can fit a line based on the data (black points) and predict John's score. *Simple, isn't it?*
 
-![sample-linear-model-plot](/images/posts/2020-07-02-introduction-to-glm/1-example-linear-model.png)
+![sample-linear-model-plot](/images/posts/2020-07-02-introduction-to-glm/1-example-linear-model.png?style=centerme)
 <center>Figure 1. Sample case: predicting exam score based on study duration. The red line depicts the predicted score.</center><br/>
 
 To come up with the regression line, we seek a line that minimizes the error of predicting the actual data. Based on this model, average students who do not study at all can get 64 on their exam. Additional one hour of study increases 3.4 score on average, although it does not seem that study duration is a statistically significant aspect that associates with the exam score (p-value = 0.077).
 
-![sample-linear-model-summary](/images/posts/2020-07-02-introduction-to-glm/2-lm-summary.png)
+![sample-linear-model-summary](/images/posts/2020-07-02-introduction-to-glm/2-lm-summary.png?style=centerme)
 <center>Figure 2. Summary of the linear model. Duration of study is not a statistically-significant aspect to predict the exam score.</center><br/>
 
 ## How do we know if it is a good model?
@@ -43,10 +43,10 @@ Aside from $$R^2$$, we should also assess if the model is appropriate to fit the
 
 Based on the model we have, we can plot the fitted values vs. the residuals. We expect that the error has a constant variance, i.e., homoskedastic. As seen on Figure 3, the variance on exam score between 70 and 75 is higher than others. Additionally, we can observe the distribution of the residuals. Figure 4 shows a normal Q-Q plot: the x-axis shows the quantiles of error from our model. If the error is normally distributed, we expect them to follow the dotted line. Here, we observe that the error does not follow normal distribution. *What should we do?*
 
-![lm-fitted-vs-residual](/images/posts/2020-07-02-introduction-to-glm/3-lm-fitted-vs-residual.png)
+![lm-fitted-vs-residual](/images/posts/2020-07-02-introduction-to-glm/3-lm-fitted-vs-residual.png?style=centerme)
 <center>Figure 3. Fitted vs. residual plot of linear model in Figure 1</center><br/>
 
-![lm-qqnorm](/images/posts/2020-07-02-introduction-to-glm/4-lm-qqnorm.png)
+![lm-qqnorm](/images/posts/2020-07-02-introduction-to-glm/4-lm-qqnorm.png?style=centerme)
 <center>Figure 4. By looking at the normal Q-Q plot, we find that the error does not follow normal distribution.</center><br/>
 
 ## Introducing generalized linear model
@@ -64,7 +64,7 @@ $$y = f(\beta_{i} x_{i} + \epsilon)$$
 
 There are some link functions, which are dependent on the assumed error distribution (Figure 5). Simple linear model assumes the error is normally distributed (Gaussian family), and the link function is "identity". Thus, if we build a generalized linear model (GLM) with that configuration, the result equals to a simple linear model. In this case, we can assume that the error follows binomial distribution, by viewing the score as a success (if score = 100) or failure (if score = 0) -- this model is also called logistic regression. Figure 6 shows the model summary.
 
-![link-function](/images/posts/2020-07-02-introduction-to-glm/5-glm-link-function.png)
+![link-function](/images/posts/2020-07-02-introduction-to-glm/5-glm-link-function.png?style=centerme)
 <center>Figure 5. Available options of error distribution and the link functions in glm command (R) [2].</center><br/>
 
 Since we use logit link, we should use inverse-logit function to transform the intercept's estimate ($$\eta$$) and get the average exam score.
@@ -74,12 +74,12 @@ $$p = \frac{exp(\eta)}{1+exp(\eta)}$$
 This model shows that on average, students get 62.72 on their exam. 
 We also can interpret the estimates of covariates as an odd ratio. For instance: if a student studies for one additional hour, he/she is likely to get $$exp(0.18591) = 1.2$$ times higher score than the average students.
 
-![glm-summary](/images/posts/2020-07-02-introduction-to-glm/6-glm-summary.png)
+![glm-summary](/images/posts/2020-07-02-introduction-to-glm/6-glm-summary.png?style=centerme)
 <center>Figure 6. Logistic regression model summary. In this model, hour is statistically significant.</center><br/>
 
 GLM function does not return $$R^2$$, but we can calculate them based on the null deviance ($$SS_{total}$$) and residual deviance ($$SS_{residual}$$). Although the $$R^2 = 0.3367$$, which is slightly lower than the linear model, this model is more reasonable to use. Figure 7 shows the comparison of predicted values when a student studies for 16 hours (*Is this guy truly hard-working or do we have erroneous data?*).
 
-![lm-glm-comparison](/images/posts/2020-07-02-introduction-to-glm/7-lm-glm-extrapolation.png)
+![lm-glm-comparison](/images/posts/2020-07-02-introduction-to-glm/7-lm-glm-extrapolation.png?style=centerme)
 <center>Figure 7. When we extrapolate the prediction, the simple linear model results in an unreasonable score. Meanwhile, logistic regression model seems more plausible in this case.</center><br/>
 
 ## Takeaways

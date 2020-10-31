@@ -13,14 +13,14 @@ k-nearest neighbours (knn) is one of the most common algorithm in classification
 
 Suppose we want to identify someone's gender based on his/her height and weight. If there is a new person with height = 165 cm and weight = 62 cm, should we call that person as a he or she?
 
-![dataset-preview](/images/posts/2019-01-28-knn-explained/1-intuition.png)
+![dataset-preview](/images/posts/2019-01-28-knn-explained/1-intuition.png?style=centerme)
 <center>Figure 1. What is that person's gender? </center><br>
 
 Here, we have set of points containing height and weight $(x, y)$. While Naive Bayes uses prior probability and Decision Tree computes information gain, k-nearest neighbours calculates proximity of the new point to other point.
 
 Using that intuition, we find the most similar point and use that point's class as the prediction. Every training data point has its region around it, which is form of [Voronoi tessellation](http://datagenetics.com/blog/may12017/index.html). If a new point exists on certain region, it means that point has similar class to that region's data point.
 
-![decision-boundary](/images/posts/2019-01-28-knn-explained/2-voronoi-tessellation.png)
+![decision-boundary](/images/posts/2019-01-28-knn-explained/2-voronoi-tessellation.png?style=centerme)
 <center>Figure 2. Decision boundary of each point </center><br>
 
 Thus, the new point is more similar to the blue point $(162,65)$ - which is a female.
@@ -60,7 +60,7 @@ $D(A,B) = \sqrt{\sum_r{\sum_c(A_{r,c}-B_{r,c})^2}}$
 
 where $r$ equals to row and $c$ equals to column of pixel location in the image.
 
-![MNIST Image Dataset](https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png)
+![MNIST Image Dataset](https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png?style=centerme)
 <center>Figure 3. MNIST dataset (Source: <a href="https://en.wikipedia.org/wiki/MNIST_database">Wikipedia</a>)</center>
 
 ### Regression
@@ -79,12 +79,12 @@ Algorithm:
 
 Suppose we have the blue points as training set, and we want to know y-value of a new data point $(6.5,y)$. Using 1-nn, we estimate its value equal to point $(7,0.55)$. If we use more nearest neighbours, we could observe how the predicted value changes.
 
-![knn-regression-interpolation](/images/posts/2019-01-28-knn-explained/4-knn-regression-interpolation.png)
+![knn-regression-interpolation](/images/posts/2019-01-28-knn-explained/4-knn-regression-interpolation.png?style=centerme)
 <center>Figure 4. Interpolation on knn regression (Source: [2])</center><br>
 
 While it has decent performance if we use it to predict testing data which are still within the range of training set, we should be careful on using this to predict data outside the training set. As we can see on Figure 5, we couldn't get y-value which fits sine wave on testing point $(-0.5,y)$. Remember that knn is an **instance-based learner**.
 
-![knn-regression-extrapolation](/images/posts/2019-01-28-knn-explained/5-knn-regression-extrapolation.png)
+![knn-regression-extrapolation](/images/posts/2019-01-28-knn-explained/5-knn-regression-extrapolation.png?style=centerme)
 <center>Figure 5. Extrapolation on knn regression (Source: [2])</center><br>
 
 ## Things to consider
@@ -97,7 +97,7 @@ Our prediction result relies heavily on the value of $k$.
 
 Thus, we should split the training set into a validation set. We validate the prediction result on validation set using different value of $k$, and choose model with $k$ value with the best performance.
 
-![k-decision-boundary](/images/posts/2019-01-28-knn-explained/6-k-affects-decision-boundary.png)
+![k-decision-boundary](/images/posts/2019-01-28-knn-explained/6-k-affects-decision-boundary.png?style=centerme)
 <center>Figure 6. How <i>k</i> affects decision boundary (Source: [3])</center><br>
 
 ### Which distance measure should be used?
@@ -125,7 +125,7 @@ We should also take note that knn requires us to **fill missing values** on the 
 
 knn has similar approach with Parzen Window, the difference is that knn select $k$ nearest neighbours to determine its decision boundary. Meanwhile, Parzen Window selects a constant-valued radius - all points within that radius are considered as the neighbours.
 
-![knn-vs-parzen-window](/images/posts/2019-01-28-knn-explained/7-knn-vs-parzen-window.png)
+![knn-vs-parzen-window](/images/posts/2019-01-28-knn-explained/7-knn-vs-parzen-window.png?style=centerme)
 <center>Figure 7. Difference between knn and Parzen Window (Source: [2])</center><br>
 
 ## Pros and cons
@@ -158,7 +158,7 @@ k-d trees can be used on low dimensional data with real-value. By using this, we
 k-d trees work by building binary trees from training data:
 we pick a random dimension, find the median, then split the data into two regions. We repeat this step until certain depth.
 
-![k-d-trees](/images/posts/2019-01-28-knn-explained/8-k-dtree.png)
+![k-d-trees](/images/posts/2019-01-28-knn-explained/8-k-dtree.png?style=centerme)
 <center>Figure 8. k-d trees limit the nearest neighbours search to certain region (Source: [2])</center><br>
 
 
@@ -168,7 +168,7 @@ Locality-Sentive Hashing (LSH) can be used on high dimensional data, either real
 
 LSH works similar to k-d trees, except that it splits the regions not based on median, but using random hyperplanes $h_1...h_k$. Each hyperplane split the region, which results in $2^k$ regions. Then, we select the nearest neighbours which reside on the same region as the testing point. That's why it could miss the actual nearest neighbours.
 
-![lsh](/images/posts/2019-01-28-knn-explained/9-lsh-example.png)
+![lsh](/images/posts/2019-01-28-knn-explained/9-lsh-example.png?style=centerme)
 <center>Figure 9. Example of LSH (Source: [1])</center><br>
 
 ### Inverted list

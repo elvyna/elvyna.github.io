@@ -61,3 +61,8 @@ pre.highlight code,
 .post {
   text-align: justify;
 }
+
+img[src$="centerme"] {
+  display:block;
+  margin: 0 auto;
+}

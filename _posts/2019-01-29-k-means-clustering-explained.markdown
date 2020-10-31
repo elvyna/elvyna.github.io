@@ -68,7 +68,7 @@ Note:
 
 Compared to other clustering algorithms, k-means is considered fast, with complexity O(# of iterations * # of clusters * # of instances * # of dimensions).
 
-![kmeans-iteration](/images/posts/2019-01-29-k-means-clustering-explained/1-kmeans-process.png)
+![kmeans-iteration](/images/posts/2019-01-29-k-means-clustering-explained/1-kmeans-process.png?style=centerme)
 <center>Figure 1. Iterations on k-means clustering (Source: [3])</center><br>
 
 Properties of k-means:
@@ -79,10 +79,10 @@ Properties of k-means:
 3. nearby data points could end up in different cluster, depends on the initialization of centroid
 4. limited to linear cluster boundaries
 
-![local-minimum](/images/posts/2019-01-29-k-means-clustering-explained/2-kmeans-local-minimum.png)
+![local-minimum](/images/posts/2019-01-29-k-means-clustering-explained/2-kmeans-local-minimum.png?style=centerme)
 <center>Figure 2. Centroid initialization and <i>k</i> matter! (Source: [2])</center><br>
 
-![cluster-boundaries](https://scikit-learn.org/stable/_images/sphx_glr_plot_cluster_comparison_001.png)
+![cluster-boundaries](https://scikit-learn.org/stable/_images/sphx_glr_plot_cluster_comparison_001.png?style=centerme)
 <center>Figure 3. Check the shape of your data before deciding which algorithm to use (Source: <a href="https://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_comparison.html">scikit-learn</a>))</center><br>
 
 ### How to choose number of $k$?
@@ -91,7 +91,7 @@ If you already have an initial assumption of your dataset, e.g. the data are ima
 
 We could use Scree plot to decide the value of $k$:
 
-![local-minimum](/images/posts/2019-01-29-k-means-clustering-explained/4-scree-plot.png)
+![local-minimum](/images/posts/2019-01-29-k-means-clustering-explained/4-scree-plot.png?style=centerme)
 <center>Figure 4. Scree plot shows decreasing rate of intra-cluster distance (Source: [2])</center><br>
 
 Based on elbow method, we could pick $k$ where the aggregate intra-cluster distance has highest rate of decrease (has optimum 2<sup>nd</sup> derivative value of $V$) - you can observe the visualizaton using Scree plot. On Figure 4, we could pick $k$ = 4.
@@ -130,7 +130,7 @@ Then, we count the error, accuracy, and F1-score.
 - False negatives: matching pairs $x_i, x_j$ which aren't in the same cluster --> ($e, h$)
 - False positives: non-matching pairs $x_i, x_j$ which are in the same cluster --> ($c, d$)
 
-![pair-matching](/images/posts/2019-01-29-k-means-clustering-explained/5-intrinsic-pair-matching.png)
+![pair-matching](/images/posts/2019-01-29-k-means-clustering-explained/5-intrinsic-pair-matching.png?style=centerme)
 <center>Figure 5. Intrinsic evaluation using pair-matching (Source: [1])</center><br>
 
 If the clustering algorithm allows overlapping cluster (see red boundary on Figure 5), we could handle it by counting (g, h) as both true negative (it is not on the same cluster: $C_1$ and $C_3$), and also as false positive (it should be on the new cluster in the red boundary).
@@ -142,7 +142,7 @@ Sample application:
 - Dimensionality reduction: instead of using each pixels in an image, we can split the pixels into patches, cluster those patches and use the clusters as feature to classify the image
 - Image compression [3]: use cluster centers to represent pixel space of an image
 
-![local-minimum](/images/posts/2019-01-29-k-means-clustering-explained/7-image-compression.png)
+![local-minimum](/images/posts/2019-01-29-k-means-clustering-explained/7-image-compression.png?style=centerme)
 <center>Figure 6. Image compression using cluster center of each pixel (Source: [3])</center><br>
 
 ## Conclusions

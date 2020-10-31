@@ -11,7 +11,7 @@ On these cases, we can do time series hypothesis tests. Wait, what is it? Let me
 - Time series: set of data which are obtained in sequential order, and are composed of components like trend and seasonality. For example: daily household spending, transaction value of a grocery store. 
 - Hypothesis test: examination whether the observed data support our initial guess, e.g. team A plays better than team B.
 
-![time-series-example](https://www.svds.com/wp-content/uploads/2015/08/DJ-vs-JL-1024x590.png) 
+![time-series-example](https://www.svds.com/wp-content/uploads/2015/08/DJ-vs-JL-1024x590.png?style=centerme) 
 <center>Figure 1. Example of time series data (source: <a href="https://www.svds.com/avoiding-common-mistakes-with-time-series/">Silicon Valley Data Science</a>)</center><br>
 
 In brief, time series hypothesis testing talks about how we identify whether different time periods have significantly different observation. What's the difference with conducting t-test? Well, we indeed compare difference between two or more groups; but the challenge is that each observation on time series data has **serial dependency** to other observations, also contains **trend** and **seasonality** (e.g. transactions grow 1.5x over past 3 years, more transactions occur on weekends), so we can't simply separate the observation into some groups. 
@@ -24,12 +24,12 @@ As previously stated, time series data has autocorrelation -  serial dependency 
 
 To gain more understanding, we use [Bukalapak] search query data as the case study: we want to check whether number of search query is significantly different after Bukalapak Nego Cincai campaign release. The notebook can be accessed [here](http://nbviewer.jupyter.org/github/elvyna/data-analysis/blob/master/jupyter-notebook/2018-09-16%20Bukalapak%20Nego%20Cincai%20-%20Time%20series%20hypothesis%20test.ipynb). 
 
-![search-query](/images/posts/2018-10-26-time-series-hypothesis-testing/bukalapak-tokopedia-search-query.png)
+![search-query](/images/posts/2018-10-26-time-series-hypothesis-testing/bukalapak-tokopedia-search-query.png?style=centerme)
 <center>Figure 2. Bukalapak and Tokopedia search query growth</center><br>
 
 Note: Tokopedia's search query will be used later; we can see that it has similar trend with Bukalapak, with earlier increasing popularity.
 
-![bukalapak-residuals](/images/posts/2018-10-26-time-series-hypothesis-testing/time-series-decomposition-bukalapak.png)
+![bukalapak-residuals](/images/posts/2018-10-26-time-series-hypothesis-testing/time-series-decomposition-bukalapak.png?style=centerme)
 <center>Figure 3. Residuals extraction</center><br>
 
 We conduct two hypothesis tests:
@@ -61,10 +61,10 @@ There are three plots on CausalImpact's output:
 
 The first campaign shows increasing search query compared to the prediction (when no campaign is released), and the impact is statistically significant with p-value = 0.001. Meanwhile, second campaign doesn't seem to have any effect on the search query (p-value = 0.254). Detailed result can be seen [here](http://nbviewer.jupyter.org/github/elvyna/data-analysis/blob/master/jupyter-notebook/2018-09-16%20Bukalapak%20Nego%20Cincai%20-%20Time%20series%20hypothesis%20test%20-%20R.ipynb).
 
-![causal-impact-1](/images/posts/2018-10-26-time-series-hypothesis-testing/causal-impact-test-1.png)
+![causal-impact-1](/images/posts/2018-10-26-time-series-hypothesis-testing/causal-impact-test-1.png?style=centerme)
 <center>Figure 4. Causal impact analysis of the first campaign - significant </center><br>
 
-![causal-impact-2](/images/posts/2018-10-26-time-series-hypothesis-testing/causal-impact-test-2.png)
+![causal-impact-2](/images/posts/2018-10-26-time-series-hypothesis-testing/causal-impact-test-2.png?style=centerme)
 <center>Figure 5. Causal impact analysis of the second campaign - not significant</center><br>
 
 Since result of two sample t-test and causal impact differs, we use Bayesian change point as final check.  
@@ -73,10 +73,10 @@ Since result of two sample t-test and causal impact differs, we use Bayesian cha
 
 Based on the data (for test 1 and test 2), we try to estimate on which point of time the data changes. It appears that the change point occurs on January and July 2018 (when the first and second campaign started). Detected change point on January 2018 supports causal impact analysis's results; while although we observe change point on July 2018, causal impact analysis shows that the difference isn't statistically significant. Thus, we can infer that the first campaign significantly increases Bukalapak's search query; while the second campaign doesn't.
 
-![bcp-1](/images/posts/2018-10-26-time-series-hypothesis-testing/bcp-test-1.png)
+![bcp-1](/images/posts/2018-10-26-time-series-hypothesis-testing/bcp-test-1.png?style=centerme)
 <center>Figure 6. Change point analysis on first campaign: January 2018</center><br>
 
-![bcp-2](/images/posts/2018-10-26-time-series-hypothesis-testing/bcp-test-2.png)
+![bcp-2](/images/posts/2018-10-26-time-series-hypothesis-testing/bcp-test-2.png?style=centerme)
 <center>Figure 7. Change point analysis on second campaign: July 2018</center><br>
 
 ## Conclusions
