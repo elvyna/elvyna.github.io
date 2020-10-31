@@ -1060,6 +1060,7 @@ pre {
 .excerpt {
 	margin: 0;
 	font-size: .9em;
+	text-align: justify;
 	color: #999999; }
 
 .intro {
@@ -1098,8 +1099,8 @@ pre {
 
 .content-wrapper {
 	z-index: 800;
-	width: 60%;
-	max-width: 800px;
+	width: 70%;
+	/*max-width: 800px;*/
 	margin-left: 40%; }
 
 .content-wrapper__inner {
