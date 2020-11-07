@@ -92,7 +92,7 @@ As we iterate the segmentation, we look for segment with the lowest mean squared
 
 ## Conclusions
 
-As we already learned, change point analysis methods help us to teach computers (or even ourselves) how to identify whether any changes occur. The approaches I shared above can be implemented on your own easily, you can find the sample code [here](https://nbviewer.jupyter.org/github/elvyna/data-analysis/blob/master/jupyter-notebook/2019-11-13%20Changepoint%20analysis%20on%20daily%20expenses.ipynb). However, don't stop here, as there are more change point analysis methodologies to explore! You can start by learning from the available libraries, such as [bayesloop](http://docs.bayesloop.com/en/stable/tutorials/changepointstudy.html) in Python or [changepoint](https://cran.r-project.org/web/packages/changepoint/changepoint.pdf) package in R.
+As we already learned, change point analysis methods help us to teach computers (or even ourselves) how to identify whether any changes occur. The approaches I shared above can be implemented on your own easily, you can find the sample code [here](https://nbviewer.jupyter.org/github/elvyna/data-analysis/blob/master/code/python/2019-11-13%20Changepoint%20analysis%20on%20daily%20expenses.ipynb). However, don't stop here, as there are more change point analysis methodologies to explore! You can start by learning from the available libraries, such as [bayesloop](http://docs.bayesloop.com/en/stable/tutorials/changepointstudy.html) in Python or [changepoint](https://cran.r-project.org/web/packages/changepoint/changepoint.pdf) package in R.
 
 ## References
 

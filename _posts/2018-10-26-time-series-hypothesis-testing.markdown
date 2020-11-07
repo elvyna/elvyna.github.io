@@ -22,7 +22,7 @@ We use two approaches here:
 
 As previously stated, time series data has autocorrelation -  serial dependency with previous data points; which means we couldn't directly split the data into two groups and compare them. By removing trend and seasonal components from the data, we have residuals of the series. If the residuals fulfill normality assumption (i.e. the residuals are normally distributed), we can proceed to hypothesis test. Initially, we should define the null hypothesis - the one hypothesis we try to reject. 
 
-To gain more understanding, we use [Bukalapak] search query data as the case study: we want to check whether number of search query is significantly different after Bukalapak Nego Cincai campaign release. The notebook can be accessed [here](http://nbviewer.jupyter.org/github/elvyna/data-analysis/blob/master/jupyter-notebook/2018-09-16%20Bukalapak%20Nego%20Cincai%20-%20Time%20series%20hypothesis%20test.ipynb). 
+To gain more understanding, we use [Bukalapak] search query data as the case study: we want to check whether number of search query is significantly different after Bukalapak Nego Cincai campaign release. The notebook can be accessed [here](https://nbviewer.jupyter.org/github/elvyna/data-analysis/blob/master/code/python/2018-09-16%20Bukalapak%20Nego%20Cincai%20-%20Time%20series%20hypothesis%20test.ipynb). 
 
 ![search-query](/images/posts/2018-10-26-time-series-hypothesis-testing/bukalapak-tokopedia-search-query.png?style=centerme)
 <center>Figure 2. Bukalapak and Tokopedia search query growth</center><br>
@@ -59,7 +59,7 @@ There are three plots on CausalImpact's output:
 2. pointwise: shows difference between predicted and actual value per data point
 3. cumulative: shows cumulative difference between predicted and actual value
 
-The first campaign shows increasing search query compared to the prediction (when no campaign is released), and the impact is statistically significant with p-value = 0.001. Meanwhile, second campaign doesn't seem to have any effect on the search query (p-value = 0.254). Detailed result can be seen [here](http://nbviewer.jupyter.org/github/elvyna/data-analysis/blob/master/jupyter-notebook/2018-09-16%20Bukalapak%20Nego%20Cincai%20-%20Time%20series%20hypothesis%20test%20-%20R.ipynb).
+The first campaign shows increasing search query compared to the prediction (when no campaign is released), and the impact is statistically significant with p-value = 0.001. Meanwhile, second campaign doesn't seem to have any effect on the search query (p-value = 0.254). Detailed result can be seen [here](https://github.com/elvyna/data-analysis/blob/master/code/R/2018-09-16%20Bukalapak%20Nego%20Cincai%20-%20Time%20series%20hypothesis%20test%20-%20R.ipynb).
 
 ![causal-impact-1](/images/posts/2018-10-26-time-series-hypothesis-testing/causal-impact-test-1.png?style=centerme)
 <center>Figure 4. Causal impact analysis of the first campaign - significant </center><br>
