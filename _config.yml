@@ -1,27 +1,26 @@
 # Site settings
 title: Elvyna Tunggawan
-description: 'Data scientist. Lifelong learner.'
-url: 'https://elvyna.github.io'
+description: "Data scientist. Lifelong learner."
+url: "https://elvyna.github.io"
 # baseurl: 'https://elvyna.github.io'
-google_analytics: 'UA-61022055-2'
-disqus_shortname: 'elvyna-github-io'
+google_analytics: "UA-61022055-2"
+disqus_shortname: "elvyna-github-io"
 future: false
 
 author:
-  name: 'Elvyna Tunggawan'
+  name: "Elvyna Tunggawan"
   email: elvyna.tunggawan@gmail.com
   twitter_username: vexenta
-  facebook_username: elvyna.tunggawan
-  github_username:  elvyna
-  linkedin_username:  elvyna
+  github_username: elvyna
+  linkedin_username: elvyna
+  speakerdeck_username: elvyna
 
 defaults:
-  -
-    scope:
-      path: ''
-      type: 'posts'
+  - scope:
+      path: ""
+      type: "posts"
     values:
-        layout: 'post'
+      layout: "post"
 
 # Build settings
 destination: _site
@@ -31,8 +30,8 @@ markdown: kramdown
 highlighter: rouge
 
 sass:
-    sass_dir: _sass
-    style: compressed
+  sass_dir: _sass
+  style: compressed
 
 kramdown:
   # use Github Flavored Markdown
@@ -40,5 +39,5 @@ kramdown:
   # do not replace newlines by <br>s
   hard_wrap: false
 
-plugins: ['jekyll-paginate','jekyll-seo-tag']
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png','ruby-dev']
+plugins: ["jekyll-paginate", "jekyll-seo-tag"]
+exclude: ["README.md", "Gemfile", "Gemfile.lock", "screenshot.png", "ruby-dev"]
