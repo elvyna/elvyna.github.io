@@ -73,7 +73,7 @@ It is easier to start at the top, then work down to the details. The steps are:
 
 **f. Recheck the question and answer**: recheck question raised on (e). If it is different to the one you defined on (a), you might need to change it. Also make sure you don't pick a wrong complication on (e).
 
-![fig-2-top-down-pyramid](http://handbookofawesome.com/wp-content/uploads/2012/01/Pyramid1-v1.png?style=centerme)
+![fig-2-top-down-pyramid](http://handbookofawesome.com/wp-content/uploads/2012/01/Pyramid1-v1.png)
 <center>Figure 2. Top-down approach (source: <a href="http://handbookofawesome.com/2012/01/presenting-like-a-pro/)">Handbook of Awesome</a>)</center><br />
 
 The purpose of this approach is to make sure you know what question you are trying to answer. Once you have it, you should be able to continue the writing relatively easily.
