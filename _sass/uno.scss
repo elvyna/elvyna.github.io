@@ -965,19 +965,19 @@ h1 {
 	letter-spacing: .05em; }
 
 h2 {
-	font-size: 1.8em; }
+	font-size: 2.2em; }
 
 h3 {
+	font-size: 1.8em; }
+
+h4 {
 	font-size: 1.4em; }
 
-h4 {
-	font-size: 1em; }
-
-h4 {
-	font-size: 0.8em; }
-
 h5 {
-	font-size: 0.6em; }
+	font-size: 1.2em; }
+
+h6 {
+	font-size: 1em; }
 
 p {
 	margin-bottom: 1.3em;
@@ -1100,7 +1100,7 @@ pre {
 .content-wrapper {
 	z-index: 800;
 	width: 70%;
-	max-width: 960px; /*uncommented*/
+	max-width: 800px; /*uncommented*/
 	margin-left: 40%; }
 
 .content-wrapper__inner {
