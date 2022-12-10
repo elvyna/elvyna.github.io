@@ -5,13 +5,16 @@ categories: [time-series, clustering]
 tags: [statistics, time-series, machine-learning, unsupervised-learning]
 ---
 
-I like to keep track of things on my daily life. I mean, not just by eyeballing and organising where each item is placed on my closet, but also recording stuff like personal expense, weight, and step counts (well, as long as I have a fully-functioned smart band). These data are tracked over time and are called *time series* data. Given multiple time series, we can check their similarities, for example, does my exercise routine (i.e., step count) have a similar pattern to my spending? *If it is true, I should reflect and check if I usually kill my time walking at a shopping mall.*
+I like to keep track of things in my life. I mean, not just by eyeballing and organising where each item is placed on my closet, but also recording stuff like personal expense, weight, and step counts. These kind of data are tracked over time and are known as *time series* data. Given multiple time series, there are situations where we might be interested to explore if they share any similarities, e.g., does my exercise routine (i.e., step count) have a similar pattern to my spending? *If it is true, I should contemplate whether those steps were actually me exploring a shopping mall.*
 
 ## How to measure the similarity?
 
 While analysing time series data, by default we usually check the autocorrelation and partial autocorrelation of the time series [[1]](https://machinelearningmastery.com/gentle-introduction-autocorrelation-partial-autocorrelation/). However, these approaches only measure the relationship between a data point with the other data points **within the same time series**. Hence, we can't use this when we want to compare different time series.
 
-Another way that we frequently use is computing the summary statistics of each time series data, let's say, the mean and standard deviation, then execute any clustering algorithm. While this approach is not wrong (there are many ways to Rome!), we might lose important characteristics of the time series data since we're only taking the summary statistics as the input. *Then, how can we do better?*
+Another way that we frequently use is computing the **summary statistics** of each time series data, let's say, the mean and standard deviation, then execute any **clustering algorithm**. Despite the simplicity, we might lose important information of the time series data since we're only taking the summary statistics as the input. *Then, how can we do better?*
+
+![The [Datasaurus Dozen](https://www.autodesk.com/research/publications/same-stats-different-graphs)](https://miro.medium.com/max/600/1*W--cGoA3_n2ZlU6Xs4o2iQ.gif)
+<center>The <a href='https://www.autodesk.com/research/publications/same-stats-different-graphs'>Datasaurus Dozen</a>; how totally different datasets may share similar mean and standard deviations.</center>
 
 There are several ways to measure the similarity between two time series, such as:
 
@@ -30,12 +33,13 @@ There are several ways to measure the similarity between two time series, such a
 - allows one to many comparison between indices on different time series
 - provides warping mechanism
 - allow time series averaging via barycenter
+- drawback: computational cost
 
 ...
 
 ## Time series clustering
 
-Given the similarity measures, we can do clustering based on them.
+After computing the similarity measures, we can cluster the time series.
 
 **example image**, e.g., from [tslearn docs](https://tslearn.readthedocs.io/en/stable/auto_examples/clustering/plot_kmeans.html)
 
@@ -53,7 +57,12 @@ Based on k-means clustering with dynamic time warping, use `tslearn` Python pack
 
 ## Takeaways
 
-...s
+...
+
+Limitations:
+
+- computational complexity
+- can't handle multivariate time series. In this case, feature-based time series clustering is recommended (**TO DO: citation; figure out the proper way to extract the time series features**). Can try autoencoders. 
 
 ## References
 
