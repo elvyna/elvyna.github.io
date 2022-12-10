@@ -77,6 +77,16 @@
               </li>
             {% endif %}
 
+            {% if site.author.mastodon_username %}
+              <!-- Mastodon -->
+              <li class="navigation__item">
+                <a rel="me" href="https://mastodon.social/{{ site.author.mastodon_username }}" title="{{ site.author.mastodon_username }} on Mastodon" target="_blank">
+                  <img src="{{ site.baseurl }}/images/mastodon.png" height="21" width="20">
+                  <span class="label">Mastodon</span>
+                </a>
+              </li>
+            {% endif %}
+
             {% if site.author.email %}
               <!-- Email -->
               <li class="navigation__item">

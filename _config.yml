@@ -15,6 +15,7 @@ author:
   linkedin_username: elvyna
   speakerdeck_username: elvyna
   medium_username: '@elvyna'
+  mastodon_username: '@elvyna'
 
 defaults:
   - scope:
